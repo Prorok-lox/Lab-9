@@ -1,22 +1,22 @@
-function updateProd(el) {
-    product_id = el.value
-    fetch('/in_stock/' + product_id, {
-        method: 'patch',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({'in_stock': el.checked})
-    })
-    console.log(product_id)
-}
+// function updateProd(el) {
+//     memory_id = el.value
+//     fetch('/in_memory/' + memory_id, {
+//         method: 'patch',
+//         headers: {'Content-Type': 'application/json'},
+//     })
+//     console.log(memory_id)
+// }
 
-function addProduct() {
-    let prodName = document.getElementById('prod_name').value
-    let price = document.getElementById('price').value
+function addCity() {
+    let cityName = document.getElementById('city_name').value
+    let date = document.getElementById('date').value
     fetch('/add', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({'prod_name': prodName,
-                             'price': price,
-                             'in_stock': true})
+        body: JSON.stringify({
+            'city_name': cityName,
+            'date': date
+        })
     })
 //    console.log("Add")
 }
